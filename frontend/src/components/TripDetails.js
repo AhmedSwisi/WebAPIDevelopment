@@ -1,6 +1,7 @@
-const TripDetails = ({trip}) => {
-    console.log(trip)
-    
+const TripDetails = ({trip }) => {
+    if (!trip || !trip.country) {
+        return null; // Return null or a loading indicator while the data is being fetched
+      }
     return(
         <div className="trip-details">
             <h4>{trip.country.name}</h4>
@@ -8,7 +9,7 @@ const TripDetails = ({trip}) => {
             <p><strong>AverageCost: </strong>{trip.country.averageCost}</p>
             <p><strong>costPerNight: </strong>{trip.country.costPerNight}</p>
             <p><strong>planeCost: </strong>{trip.country.planeCost}</p>
-            <p><strong>totalTripPrice: </strong>{trip.totalTripPrice}</p>
+            
         </div>
     )}
 export default TripDetails

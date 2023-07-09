@@ -18,16 +18,17 @@ export const tripsReducer = (state = { trips: [] }, action) => {
   }
   
 
-export const TripContextProvider= ({children}) =>{
+export const TripContextProvider= ({children}) =>{ 
     const [state,dispatch]=useReducer(tripsReducer,{
-        trips:[]
+        trips:null
     })
+    //dispatch({type: 'SET_TRIPS',payload:[{},{}]})
 
     
 
     return(
         <TripContext.Provider value={{...state,dispatch}}>
-            {children}
+          {children}
         </TripContext.Provider> 
     )
 }

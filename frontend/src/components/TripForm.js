@@ -1,6 +1,5 @@
+import { useState } from "react"
 import { useTripsContext } from "../hooks/UseTripContext"
-
-const { useState } = require("react")
 const TripCountryForm= () =>{
 
     const {dispatch}=useTripsContext()
@@ -9,12 +8,13 @@ const TripCountryForm= () =>{
     const [averageCost,setAverageCost]=useState('')
     const [costPerNight,setCostPerNight]=useState('')
     const [planeCost,setPlaneCost]=useState('')
+    const [currency,setCurrency]=useState('')
     const [error,setError]=useState(null)
 
-    const handleSubmit= async(error) =>{
-        error.preventDefault()
+    const handleSubmit= async(e) =>{
+        e.preventDefault()
         
-        const trips= {name,capital,averageCost,costPerNight,planeCost}
+        const trips= {name,capital,averageCost,costPerNight,planeCost, currency}
         const response=await fetch('http://localhost:4000/api/countries',{
             method:'POST',
             body:JSON.stringify(trips),
@@ -25,6 +25,7 @@ const TripCountryForm= () =>{
         const json=await response.json()
         if(!response.ok) {
             setError(json.error)
+            console.log(error)
         }
         if(response.ok){
 
@@ -34,8 +35,11 @@ const TripCountryForm= () =>{
             setAverageCost('')
             setPlaneCost('')
             setCostPerNight('')
+            setCurrency('')
             console.log('new trip added',json)
-            dispatch({type: 'CREATE_TRIP',payloads:json})
+            dispatch({type: 'CREATE_TRIP',payload:json})
+            // refresh page
+            window.location.reload()
         }
     }
 
@@ -78,8 +82,14 @@ const TripCountryForm= () =>{
                 value={planeCost} 
             />
 
-
+            <label>Currency</label>
+            <input
+                type="text"
+                onChange={(e) => setCurrency(e.target.value)}
+                value={currency}
+            />
             <button>Add Trip</button>
+            {error &&<div className="error">{error}</div>}
 
 
         </form>

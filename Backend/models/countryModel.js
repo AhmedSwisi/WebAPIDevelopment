@@ -21,6 +21,10 @@ const countrySchema=Schema({
         type: Number,
         required: true
     },
+    currency:{
+        type: String,
+        required: true
+    },
 
 },{timestamps: true})
 

@@ -1,0 +1,708 @@
+{
+	"info": {
+		"_postman_id": "bd2c099d-25a4-4bce-8ae8-39081adb5adf",
+		"name": "Web API Development Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27561819"
+	},
+	"item": [
+		{
+			"name": "Get all country",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/countries",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"countries"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all countries",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/countries",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"countries"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "689"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b1-IKsporlsQ1UPJju1tTV9SJADmSU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jul 2023 20:10:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"64ab13956e812cac7a0f6f88\",\n        \"name\": \"Germany\",\n        \"capital\": \"Berlin\",\n        \"averageCost\": 5000,\n        \"costPerNight\": 4000,\n        \"planeCost\": 2000,\n        \"currency\": \"EUR\",\n        \"createdAt\": \"2023-07-09T20:07:49.585Z\",\n        \"updatedAt\": \"2023-07-09T20:07:49.585Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64ab14246e812cac7a0f6f8c\",\n        \"name\": \"Germany\",\n        \"capital\": \"Berlin\",\n        \"averageCost\": 5000,\n        \"costPerNight\": 4000,\n        \"planeCost\": 2000,\n        \"currency\": \"EUR\",\n        \"createdAt\": \"2023-07-09T20:10:12.831Z\",\n        \"updatedAt\": \"2023-07-09T20:10:12.831Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"64ab14456e812cac7a0f6f8e\",\n        \"name\": \"France\",\n        \"capital\": \"Paris\",\n        \"averageCost\": 5000,\n        \"costPerNight\": 4000,\n        \"planeCost\": 2000,\n        \"currency\": \"EUR\",\n        \"createdAt\": \"2023-07-09T20:10:45.925Z\",\n        \"updatedAt\": \"2023-07-09T20:10:45.925Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get country by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/countries/123",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"countries",
+						"123"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get country by ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/countries/64aaf8584dadcf213c082c74",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"countries",
+								"64aaf8584dadcf213c082c74"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "224"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e0-EFH9A75NRiABBg9TVyYWZDtClUw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jul 2023 19:54:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"64aaf8584dadcf213c082c74\",\n    \"name\": \"France\",\n    \"capital\": \"Paris\",\n    \"averageCost\": 100,\n    \"costPerNight\": 50,\n    \"planeCost\": 1000,\n    \"createdAt\": \"2023-07-09T18:11:36.209Z\",\n    \"updatedAt\": \"2023-07-09T18:11:36.209Z\",\n    \"__v\": 0,\n    \"currency\": \"EUR\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Post Country",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"France\",\r\n    \"capital\": \"Paris\",\r\n    \"averageCost\":\"5000\",\r\n    \"costPerNight\": \"4000\",\r\n    \"planeCost\": \"2000\"\r\n    \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/api/countries",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"countries"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post Country",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Germany\",\r\n    \"capital\": \"Berlin\",\r\n    \"averageCost\":\"5000\",\r\n    \"costPerNight\": \"4000\",\r\n    \"planeCost\": \"2000\",\r\n    \"currency\" : \"EUR\"\r\n    \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/countries",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"countries"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "229"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e5-tmPT1VvS8h10YrVPYpOJkuX251s\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jul 2023 20:07:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"Germany\",\n    \"capital\": \"Berlin\",\n    \"averageCost\": 5000,\n    \"costPerNight\": 4000,\n    \"planeCost\": 2000,\n    \"currency\": \"EUR\",\n    \"_id\": \"64ab13956e812cac7a0f6f88\",\n    \"createdAt\": \"2023-07-09T20:07:49.585Z\",\n    \"updatedAt\": \"2023-07-09T20:07:49.585Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Country",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/countries/123",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"countries",
+						"123"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Coutry",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/countries/64aaf8584dadcf213c082c74",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"countries",
+								"64aaf8584dadcf213c082c74"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "224"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e0-/Kzbrvj0Ov+NaA+GWR22NABdGfM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jul 2023 20:09:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"64aaf8584dadcf213c082c74\",\n    \"name\": \"France\",\n    \"capital\": \"Paris\",\n    \"averageCost\": 100,\n    \"costPerNight\": 50,\n    \"planeCost\": 1000,\n    \"createdAt\": \"2023-07-09T18:11:36.209Z\",\n    \"updatedAt\": \"2023-07-09T19:59:04.796Z\",\n    \"__v\": 0,\n    \"currency\": \"EUR\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update field",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"planeCost\":\"10000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/api/countries/646caf28b7d1e78cb91d4e0f",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"countries",
+						"646caf28b7d1e78cb91d4e0f"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update field",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"planeCost\":\"1000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/countries/64aaf8584dadcf213c082c74",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"countries",
+								"64aaf8584dadcf213c082c74"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "224"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e0-EFH9A75NRiABBg9TVyYWZDtClUw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jul 2023 19:59:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"64aaf8584dadcf213c082c74\",\n    \"name\": \"France\",\n    \"capital\": \"Paris\",\n    \"averageCost\": 100,\n    \"costPerNight\": 50,\n    \"planeCost\": 1000,\n    \"createdAt\": \"2023-07-09T18:11:36.209Z\",\n    \"updatedAt\": \"2023-07-09T18:11:36.209Z\",\n    \"__v\": 0,\n    \"currency\": \"EUR\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get by country name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/countries/countries?countryName=Egypt&startDate=2023-05-20&endDate=2023-05-25",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"countries",
+						"countries"
+					],
+					"query": [
+						{
+							"key": "countryName",
+							"value": "Egypt"
+						},
+						{
+							"key": "startDate",
+							"value": "2023-05-20"
+						},
+						{
+							"key": "endDate",
+							"value": "2023-05-25"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get by country name",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4000/api/countries/countries?countryName=France",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"countries",
+								"countries"
+							],
+							"query": [
+								{
+									"key": "countryName",
+									"value": "France"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "290"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"122-7iO/wBpcII3q5Xk3hZiR37NARNk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jul 2023 19:59:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"country\": {\n            \"_id\": \"64aaf8584dadcf213c082c74\",\n            \"name\": \"France\",\n            \"capital\": \"Paris\",\n            \"averageCost\": 100,\n            \"costPerNight\": 50,\n            \"planeCost\": 1000,\n            \"createdAt\": \"2023-07-09T18:11:36.209Z\",\n            \"updatedAt\": \"2023-07-09T19:59:04.796Z\",\n            \"__v\": 0,\n            \"currency\": 0.9112041761,\n            \"weather\": 23,\n            \"totalTripPrice\": null,\n            \"food\": []\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get by budget",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4000/api/countries/budget?budget=250000&startDate=2023-05-20&endDate=2023-05-25",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"countries",
+						"budget"
+					],
+					"query": [
+						{
+							"key": "budget",
+							"value": "250000"
+						},
+						{
+							"key": "startDate",
+							"value": "2023-05-20"
+						},
+						{
+							"key": "endDate",
+							"value": "2023-05-25"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get by budget",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/api/countries/budget?budget=5000&startDate=2023-05-20&endDate=2023-05-25",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"countries",
+								"budget"
+							],
+							"query": [
+								{
+									"key": "budget",
+									"value": "5000"
+								},
+								{
+									"key": "startDate",
+									"value": "2023-05-20"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-05-25"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "290"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"122-nZ3b0JDlxaP2Wgqvgu/LyhNoGEI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 09 Jul 2023 20:00:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"country\": {\n            \"_id\": \"64aaf8584dadcf213c082c74\",\n            \"name\": \"France\",\n            \"capital\": \"Paris\",\n            \"averageCost\": 100,\n            \"costPerNight\": 50,\n            \"planeCost\": 1000,\n            \"createdAt\": \"2023-07-09T18:11:36.209Z\",\n            \"updatedAt\": \"2023-07-09T19:59:04.796Z\",\n            \"__v\": 0,\n            \"currency\": 0.9112041761,\n            \"weather\": 23,\n            \"totalTripPrice\": 1250,\n            \"food\": []\n        }\n    }\n]"
+				}
+			]
+		}
+	]
+}

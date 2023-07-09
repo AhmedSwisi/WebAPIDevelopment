@@ -1,0 +1,531 @@
+openapi: 3.0.0
+info:
+  title: Web API Development Project
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+paths:
+  /api/countries:
+    get:
+      tags:
+        - default
+      summary: Get all country
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: http://localhost:3000
+            Vary:
+              schema:
+                type: string
+                example: Origin
+            Access-Control-Allow-Credentials:
+              schema:
+                type: boolean
+                example: 'true'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '689'
+            ETag:
+              schema:
+                type: string
+                example: W/"2b1-IKsporlsQ1UPJju1tTV9SJADmSU"
+            Date:
+              schema:
+                type: string
+                example: Sun, 09 Jul 2023 20:10:56 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - _id: 64ab13956e812cac7a0f6f88
+                  name: Germany
+                  capital: Berlin
+                  averageCost: 5000
+                  costPerNight: 4000
+                  planeCost: 2000
+                  currency: EUR
+                  createdAt: '2023-07-09T20:07:49.585Z'
+                  updatedAt: '2023-07-09T20:07:49.585Z'
+                  __v: 0
+                - _id: 64ab14246e812cac7a0f6f8c
+                  name: Germany
+                  capital: Berlin
+                  averageCost: 5000
+                  costPerNight: 4000
+                  planeCost: 2000
+                  currency: EUR
+                  createdAt: '2023-07-09T20:10:12.831Z'
+                  updatedAt: '2023-07-09T20:10:12.831Z'
+                  __v: 0
+                - _id: 64ab14456e812cac7a0f6f8e
+                  name: France
+                  capital: Paris
+                  averageCost: 5000
+                  costPerNight: 4000
+                  planeCost: 2000
+                  currency: EUR
+                  createdAt: '2023-07-09T20:10:45.925Z'
+                  updatedAt: '2023-07-09T20:10:45.925Z'
+                  __v: 0
+    post:
+      tags:
+        - default
+      summary: Post Country
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: France
+                capital: Paris
+                averageCost: '5000'
+                costPerNight: '4000'
+                planeCost: '2000'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: http://localhost:3000
+            Vary:
+              schema:
+                type: string
+                example: Origin
+            Access-Control-Allow-Credentials:
+              schema:
+                type: boolean
+                example: 'true'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '229'
+            ETag:
+              schema:
+                type: string
+                example: W/"e5-tmPT1VvS8h10YrVPYpOJkuX251s"
+            Date:
+              schema:
+                type: string
+                example: Sun, 09 Jul 2023 20:07:49 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                name: Germany
+                capital: Berlin
+                averageCost: 5000
+                costPerNight: 4000
+                planeCost: 2000
+                currency: EUR
+                _id: 64ab13956e812cac7a0f6f88
+                createdAt: '2023-07-09T20:07:49.585Z'
+                updatedAt: '2023-07-09T20:07:49.585Z'
+                __v: 0
+  /api/countries/123:
+    get:
+      tags:
+        - default
+      summary: Get country by ID
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: http://localhost:3000
+            Vary:
+              schema:
+                type: string
+                example: Origin
+            Access-Control-Allow-Credentials:
+              schema:
+                type: boolean
+                example: 'true'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '224'
+            ETag:
+              schema:
+                type: string
+                example: W/"e0-EFH9A75NRiABBg9TVyYWZDtClUw"
+            Date:
+              schema:
+                type: string
+                example: Sun, 09 Jul 2023 19:54:59 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                _id: 64aaf8584dadcf213c082c74
+                name: France
+                capital: Paris
+                averageCost: 100
+                costPerNight: 50
+                planeCost: 1000
+                createdAt: '2023-07-09T18:11:36.209Z'
+                updatedAt: '2023-07-09T18:11:36.209Z'
+                __v: 0
+                currency: EUR
+    delete:
+      tags:
+        - default
+      summary: Delete Country
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: http://localhost:3000
+            Vary:
+              schema:
+                type: string
+                example: Origin
+            Access-Control-Allow-Credentials:
+              schema:
+                type: boolean
+                example: 'true'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '224'
+            ETag:
+              schema:
+                type: string
+                example: W/"e0-/Kzbrvj0Ov+NaA+GWR22NABdGfM"
+            Date:
+              schema:
+                type: string
+                example: Sun, 09 Jul 2023 20:09:04 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                _id: 64aaf8584dadcf213c082c74
+                name: France
+                capital: Paris
+                averageCost: 100
+                costPerNight: 50
+                planeCost: 1000
+                createdAt: '2023-07-09T18:11:36.209Z'
+                updatedAt: '2023-07-09T19:59:04.796Z'
+                __v: 0
+                currency: EUR
+  /api/countries/646caf28b7d1e78cb91d4e0f:
+    patch:
+      tags:
+        - default
+      summary: Update field
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                planeCost: '10000'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: http://localhost:3000
+            Vary:
+              schema:
+                type: string
+                example: Origin
+            Access-Control-Allow-Credentials:
+              schema:
+                type: boolean
+                example: 'true'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '224'
+            ETag:
+              schema:
+                type: string
+                example: W/"e0-EFH9A75NRiABBg9TVyYWZDtClUw"
+            Date:
+              schema:
+                type: string
+                example: Sun, 09 Jul 2023 19:59:05 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                _id: 64aaf8584dadcf213c082c74
+                name: France
+                capital: Paris
+                averageCost: 100
+                costPerNight: 50
+                planeCost: 1000
+                createdAt: '2023-07-09T18:11:36.209Z'
+                updatedAt: '2023-07-09T18:11:36.209Z'
+                __v: 0
+                currency: EUR
+  /api/countries/countries:
+    get:
+      tags:
+        - default
+      summary: Get by country name
+      parameters:
+        - name: countryName
+          in: query
+          schema:
+            type: string
+          example: Egypt
+        - name: startDate
+          in: query
+          schema:
+            type: string
+          example: '2023-05-20'
+        - name: endDate
+          in: query
+          schema:
+            type: string
+          example: '2023-05-25'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: http://localhost:3000
+            Vary:
+              schema:
+                type: string
+                example: Origin
+            Access-Control-Allow-Credentials:
+              schema:
+                type: boolean
+                example: 'true'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '290'
+            ETag:
+              schema:
+                type: string
+                example: W/"122-7iO/wBpcII3q5Xk3hZiR37NARNk"
+            Date:
+              schema:
+                type: string
+                example: Sun, 09 Jul 2023 19:59:50 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - country:
+                    _id: 64aaf8584dadcf213c082c74
+                    name: France
+                    capital: Paris
+                    averageCost: 100
+                    costPerNight: 50
+                    planeCost: 1000
+                    createdAt: '2023-07-09T18:11:36.209Z'
+                    updatedAt: '2023-07-09T19:59:04.796Z'
+                    __v: 0
+                    currency: 0.9112041761
+                    weather: 23
+                    totalTripPrice: null
+                    food: []
+  /api/countries/budget:
+    get:
+      tags:
+        - default
+      summary: Get by budget
+      parameters:
+        - name: budget
+          in: query
+          schema:
+            type: integer
+          example: '250000'
+        - name: startDate
+          in: query
+          schema:
+            type: string
+          example: '2023-05-20'
+        - name: endDate
+          in: query
+          schema:
+            type: string
+          example: '2023-05-25'
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: http://localhost:3000
+            Vary:
+              schema:
+                type: string
+                example: Origin
+            Access-Control-Allow-Credentials:
+              schema:
+                type: boolean
+                example: 'true'
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '290'
+            ETag:
+              schema:
+                type: string
+                example: W/"122-nZ3b0JDlxaP2Wgqvgu/LyhNoGEI"
+            Date:
+              schema:
+                type: string
+                example: Sun, 09 Jul 2023 20:00:28 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - country:
+                    _id: 64aaf8584dadcf213c082c74
+                    name: France
+                    capital: Paris
+                    averageCost: 100
+                    costPerNight: 50
+                    planeCost: 1000
+                    createdAt: '2023-07-09T18:11:36.209Z'
+                    updatedAt: '2023-07-09T19:59:04.796Z'
+                    __v: 0
+                    currency: 0.9112041761
+                    weather: 23
+                    totalTripPrice: 1250
+                    food: []

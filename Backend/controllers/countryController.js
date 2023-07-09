@@ -1,5 +1,7 @@
 const Country= require('../models/countryModel')
 const mongoose=require('mongoose')
+const get_weather = require('../utils/get_weather');
+const get_currency = require('../utils/get_currency');
 
 //get all trips
 const getTrips=async (req,res) => {
@@ -24,10 +26,10 @@ const getSingleTrip=async (req,res)=>{
 
 //create a trip
 const createTrip=async(req,res) =>{
-const {name,capital,averageCost,costPerNight,planeCost}=req.body
+const {name,capital,averageCost,costPerNight,planeCost, currency}=req.body
 //add doc to db
     try {
-        const country= await Country.create({name,capital,averageCost,costPerNight,planeCost})
+        const country= await Country.create({name,capital,averageCost,costPerNight,planeCost,currency})
         res.status(200).json(country)
     } 
     catch(error){
@@ -78,19 +80,28 @@ const getByCountry = async (req, res) => {
   
       const results = [];
   
-      for (const country of countries) {
+      for (let country of countries) {
         // Calculate the number of nights based on the start and end dates
         const numberOfNights = Math.ceil((new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24));
-        console.log(numberOfNights)
+        // console.log(numberOfNights)
         // Calculate the total trip price
         const totalTripPrice = (numberOfNights * country.costPerNight) + country.planeCost;
-        console.log(country)
-  
-        results.push({ country, totalTripPrice });
+        
+        // console.log(country.capital)
+
+        const weather = await get_weather(country.capital);
+        const currency = await get_currency(country.currency);
+        country = country.toObject();
+        country.weather = weather.temp;
+        country.currency = currency.data[country.currency];
+        country.totalTripPrice = totalTripPrice;
+        country.food = []
+
+        results.push({ country });
       }
-  
       res.status(200).json(results);
     } catch (err) {
+      console.log(err)
       res.status(500).json({ error: 'An error occurred while fetching the countries.' });
     }
   };
@@ -99,33 +110,43 @@ const getByCountry = async (req, res) => {
     const { budget, startDate, endDate } = req.query;
   
     try {
-      const countries = await Country.find({});
+      const countries = await Country.find();
   
       if (countries.length === 0) {
         return res.status(404).json({ error: 'No trips found within the budget.' });
       }
   
+
+      
       const results = [];
   
-      for (const country of countries) {
+      for (let country of countries) {
         // Calculate the number of nights based on the start and end dates
         const numberOfNights = Math.ceil((new Date(endDate) - new Date(startDate)) / (1000 * 60 * 60 * 24));
   
         // Calculate the total trip price
         const totalTripPrice = (numberOfNights * country.costPerNight) + country.planeCost;
+  
+        const weather = await get_weather(country.capital);
+        const currency = await get_currency(country.currency);
+        country = country.toObject();
+        country.weather = weather.temp;
+        country.currency = currency.data[country.currency];
+        country.totalTripPrice = totalTripPrice;
+        country.food = []
 
-        // if(totalTripPrice<= budget) 
-        results.push({ country, totalTripPrice });
+        if (totalTripPrice <= budget) { // Filter trips based on the budget
+          results.push({ country });
+        }
       }
   
       res.status(200).json(results);
     } catch (err) {
-        console.log(err)
+      console.log(err);
       res.status(500).json({ error: 'An error occurred while fetching the trips.' });
     }
   };
   
-
 module.exports={
     getTrips,
     getSingleTrip,
